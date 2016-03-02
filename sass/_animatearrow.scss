@@ -1,0 +1,167 @@
+
+.animateArrow{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 635px;
+	height: 210px;
+}
+.arrowLine{
+	position: absolute;
+	top:50%;
+	margin-top: -2px;
+	left: 0px;
+	display: inline-block;
+	width: 635px;
+	height: 4px;
+	background: #636263;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.arrowLine:before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: #5c6dfa;
+/*	-webkit-transition: width 2s;
+	transition: width 2s;*/
+}
+
+
+.animateArrow .arrowSides {
+	width: 100%;
+	height: 100%;
+}
+
+.animateArrow .icon-wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.animateArrow .arrowSides:before,
+.animateArrow .arrowSides:after,
+.animateArrow .icon-wrap::before,
+.animateArrow .icon-wrap::after {
+	position: absolute;
+	right: -3px;
+	width: 4px;
+	height: 65%;
+	background: #636263;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+}
+
+.animateArrow .icon-wrap::before,
+.animateArrow .icon-wrap::after {
+	z-index: 100;
+	height: 0;
+	background: #5c6dfa;
+	-webkit-transition: height 0.3s, -webkit-transform 0.3s;
+	transition: height 0.3s, transform 0.3s;
+}
+
+.animateArrow .arrowSides:before,
+.animateArrow .icon-wrap::before {
+	top: 50%;
+	-webkit-transform: translateX(-50%) rotate(-225deg);
+	transform: translateX(-50%) rotate(-225deg);
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+.animateArrow .arrowSides:after,
+.animateArrow .icon-wrap::after {
+	top: 50%;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 50% 0;
+}
+
+
+/*.animateArrow .arrowSides:hover .icon-wrap::before,
+.animateArrow .arrowSides:hover .icon-wrap::after {
+	height: 50%;
+}*/
+
+/*.animateArrow .arrowSides:hover::before,
+.animateArrow .arrowSides:hover .icon-wrap::before {
+	-webkit-transform: translateX(-50%) rotate(-235deg);
+	transform: translateX(-50%) rotate(-235deg);
+}
+
+
+.animateArrow .arrowSides:hover::after,
+.animateArrow .arrowSides:hover .icon-wrap::after {
+	-webkit-transform: translateX(-50%) rotate(55deg);
+	transform: translateX(-50%) rotate(55deg);
+}*/
+
+.animateArrow .arrowSides:hover .icon-wrap::before,
+.animateArrow .arrowSides:hover .icon-wrap::after {
+	height: 50%;
+}
+
+.animateArrow .arrowSides:hover::before,
+.animateArrow .arrowSides:hover .icon-wrap::before {
+/*	-webkit-transform: translateX(-50%) rotate(-235deg);
+	transform: translateX(-50%) rotate(-235deg);*/	
+}
+
+
+.animateArrow .arrowSides:hover::after,
+.animateArrow .arrowSides:hover .icon-wrap::after {
+/*	-webkit-transform: translateX(-50%) rotate(55deg);
+	transform: translateX(-50%) rotate(55deg);*/
+	
+}
+
+
+.animateArrow .arrowLine:before{	
+	animation:animatearrow 4s linear infinite;
+}
+
+.animateArrow .arrowSides .icon-wrap::before,
+.animateArrow .arrowSides .icon-wrap::after {
+	animation: animatearrow1 4s linear infinite;
+	animation-delay:2s;
+}
+
+/*.animateArrow .arrowSides:before,
+.animateArrow .arrowSides .icon-wrap::before {
+	-webkit-transform: translateX(-50%) rotate(-235deg);
+	transform: translateX(-50%) rotate(-235deg);
+}
+
+
+.animateArrow .arrowSides:after,
+.animateArrow .arrowSides .icon-wrap::after {
+	-webkit-transform: translateX(-50%) rotate(55deg);
+	transform: translateX(-50%) rotate(55deg);
+
+}*/
+
+
+
+@-webkit-keyframes animatearrow {
+	0%{width:0%;}
+	50%{width:100%;}
+	100%{width:100%;}			
+}
+
+@-webkit-keyframes animatearrow1 {
+	0%{height:0%;}
+	25%{height: 65%;}
+	50%{height:65%;}
+	51%{height: 0%;}
+	100%{height:0%;}
+}
+
